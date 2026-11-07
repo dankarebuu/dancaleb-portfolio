@@ -1,296 +1,352 @@
-# Dan Caleb — Design System
+# DESIGN SYSTEM — DAN CALEB PORTFOLIO
 
-**Project:** Personal Developer Portfolio  
-**Design Direction:** Dark / Modern / Premium / Minimalist  
-**Version:** 1.0
+**Version:** 1.0  
+**Status:** Initial design direction  
+**Design Identity:** Modern Technical Editorial
 
 ---
 
 ## 1. Design Philosophy
 
-The portfolio should communicate professionalism, technical competence, creativity, and attention to detail.
+The Dan Caleb portfolio should feel like a personal developer workspace: technical, creative, professional, and intentional.
 
-The visual experience should be clean and modern, with a strong emphasis on typography, spacing, contrast, and carefully selected visual elements.
+It should communicate both technical capability and personal identity without relying on excessive visual effects or generic portfolio templates.
 
 ### Core Principles
 
-- Minimalism over unnecessary decoration.
-- Consistency across all website sections.
-- Strong visual hierarchy.
-- Comfortable readability.
-- Subtle animations instead of excessive motion.
-- Responsive layouts across all screen sizes.
-- Purposeful use of accent colors.
+- **Technical:** Show real projects, technologies, and development experience.
+- **Editorial:** Use strong typography, structured layouts, and thoughtful spacing.
+- **Professional:** Present information clearly and honestly.
+- **Creative:** Introduce subtle visual details that make the portfolio memorable.
+- **Minimalist:** Every visual element should serve a purpose.
+
+### Design Inspiration
+
+- Sina Dilek: Editorial structure, typography, and technical personality.
+- Pravir Raghu: Professional organization and presentation.
+- Michał Ziółek (MZ): Dark interface, grid background, cyan accents, and project previews.
+- Alex Dev: Expressive typography, geometric elements, and creative composition.
+
+These references are sources of inspiration, not templates to reproduce.
 
 ---
 
-## 2. Color Palette
+## 2. Color System
 
-The primary theme uses dark neutral backgrounds with violet accents.
+### Primary Theme
 
-### Background Colors
+A dark interface using deep charcoal surfaces, cool neutral text, and turquoise accents.
 
-| Token | Hex | Purpose |
+| Token | Hex | Usage |
 |---|---|---|
-| Background | `#09090B` | Main website background |
-| Surface | `#111114` | Cards and elevated sections |
-| Surface Elevated | `#18181D` | Modals and highlighted surfaces |
-| Border | `#27272A` | Dividers and component borders |
+| Background | `#0B0E11` | Main page background |
+| Surface | `#11171D` | Cards and elevated sections |
+| Surface Elevated | `#171F27` | Interactive cards and panels |
+| Border | `#27313A` | Dividers and subtle outlines |
+| Primary Accent | `#40C9BD` | Links, highlights, buttons |
+| Primary Accent Hover | `#54D8CC` | Hover states |
+| Text Primary | `#F1F3F5` | Main headings and text |
+| Text Secondary | `#A1AAB5` | Descriptions |
+| Text Muted | `#778391` | Metadata and supporting labels |
 
-### Text Colors
+### Color Guidelines
 
-| Token | Hex | Purpose |
-|---|---|---|
-| Primary Text | `#FAFAFA` | Main headings and important content |
-| Secondary Text | `#A1A1AA` | Descriptions and supporting text |
-| Muted Text | `#71717A` | Metadata and less prominent content |
-| Inverted Text | `#09090B` | Text on light backgrounds |
-
-### Accent Colors
-
-| Token | Hex | Purpose |
-|---|---|---|
-| Primary Accent | `#8B5CF6` | Main brand accent |
-| Accent Hover | `#A78BFA` | Hover and active states |
-| Accent Subtle | `#2E1065` | Soft accent backgrounds |
-| Accent Secondary | `#22D3EE` | Occasional highlights |
-
-**Color Usage Rules:**
-
-- Violet is the primary brand accent.
-- Cyan should be used sparingly.
-- Avoid excessive gradients.
+- Use charcoal instead of pure black.
+- Reserve turquoise for meaningful emphasis and interactive elements.
 - Maintain sufficient contrast between text and backgrounds.
-- Do not use accent colors for every element.
+- Avoid introducing multiple competing accent colors.
+- Do not use gradients everywhere.
+- Use color consistently across all sections.
+
+The palette is the initial working palette and may be refined during visual testing.
 
 ---
 
 ## 3. Typography
 
-Typography should feel modern, clean, and highly readable.
+Typography should combine technical clarity with editorial personality.
 
-### Font Families
+### Typography Direction
 
-**Primary:** Inter
+**Display Typeface**
+- Expressive and distinctive.
+- Used for large hero headings and selected section titles.
+- Should feel refined rather than decorative.
 
-**Fallback:** Arial, sans-serif
+**Body Typeface**
+- Clean, modern sans-serif.
+- Used for paragraphs, navigation, descriptions, and buttons.
+- Prioritize readability across desktop and mobile.
 
-Use a consistent typeface throughout the website.
+**Monospace Typeface**
+- Used for labels, project numbers, metadata, and technical details.
+- Adds a subtle developer-oriented identity.
 
-### Typography Scale
+### Typography Guidelines
 
-| Element | Suggested Size | Weight |
-|---|---|---|
-| Hero Heading | 56–80px | 700 |
-| Section Heading | 36–48px | 700 |
-| Subheading | 24–30px | 600 |
-| Card Heading | 18–22px | 600 |
-| Body Text | 15–17px | 400 |
-| Small Text | 12–14px | 400 |
-| Navigation | 14–16px | 500 |
-
-Use responsive typography where necessary.
-
-Headings should have tight line heights, while body text should remain comfortable to read.
+- Establish a clear hierarchy between headings, body text, and metadata.
+- Use large headings strategically.
+- Keep paragraph widths comfortable for reading.
+- Avoid using too many font families.
+- Final font selections will be decided after comparing suitable typeface combinations.
 
 ---
 
-## 4. Spacing System
+## 4. Layout and Spacing
+
+### Overall Layout
+
+- Structured editorial layout.
+- Consistent content width and alignment.
+- Generous whitespace.
+- Clear separation between sections.
+- Asymmetrical compositions where they improve visual interest.
+
+### Grid System
+
+Use a responsive layout that adapts to desktop, tablet, and mobile screens.
+
+- Desktop: Multi-column layouts where appropriate.
+- Tablet: Reduced columns and adjusted spacing.
+- Mobile: Primarily single-column layouts.
+
+### Spacing
 
 Use a consistent spacing scale based on multiples of 4px.
 
-| Token | Value |
-|---|---|
-| 1 | 4px |
-| 2 | 8px |
-| 3 | 12px |
-| 4 | 16px |
-| 5 | 20px |
-| 6 | 24px |
-| 8 | 32px |
-| 10 | 40px |
-| 12 | 48px |
-| 16 | 64px |
-| 20 | 80px |
-| 24 | 96px |
-
-### Layout Guidelines
-
-- Use generous vertical spacing between major sections.
-- Maintain consistent horizontal page padding.
-- Keep content within a comfortable maximum width.
-- Avoid overly dense layouts.
-- Align elements carefully.
-
-Suggested maximum content width: 1200px.
+Avoid arbitrary spacing values unless a specific layout requires them.
 
 ---
 
-## 5. Border Radius
+## 5. Background and Visual Elements
 
-Use rounded corners consistently without making the interface overly rounded.
+### Background
 
-| Element | Radius |
-|---|---|
-| Small Elements | 6px |
-| Buttons | 8px |
-| Cards | 12px |
-| Large Containers | 16px |
-| Pills / Tags | 9999px |
+- Deep charcoal foundation.
+- Optional subtle grid pattern inspired by MZ.
+- Low-contrast geometric details.
+- Avoid visual noise that competes with the content.
 
----
+### Decorative Elements
 
-## 6. Borders and Shadows
+- Thin borders and dividers.
+- Small technical labels.
+- Numbered project indicators.
+- Restrained geometric outlines.
+- Subtle accent-colored details.
 
-### Borders
-
-Use subtle neutral borders to separate components from their surroundings.
-
-- Default border: `#27272A`
-- Hover border: `#3F3F46`
-- Accent border: `#8B5CF6`
-
-### Shadows
-
-Prefer subtle shadows over strong, distracting ones.
-
-Use elevation sparingly, particularly on cards, dropdowns, and floating elements.
-
-Avoid excessive glow effects.
+Decorative elements should support the content, not overwhelm it.
 
 ---
 
-## 7. Component Guidelines
+## 6. Navigation
 
-### Navigation
+### Desktop Navigation
 
-- Minimal and clean.
-- Clearly visible navigation links.
+Proposed links:
+
+- Home
+- Projects
+- About
+- Contact
+
+### Navigation Guidelines
+
+- Minimal and easy to understand.
+- Clear active-section indication.
 - Consistent spacing.
-- Subtle hover and active states.
+- Subtle hover transitions.
 - Responsive mobile navigation.
 
-### Buttons
-
-Primary buttons should use the violet accent.
-
-Secondary buttons should use dark surfaces with subtle borders.
-
-Buttons should have:
-
-- Consistent padding.
-- Clear labels.
-- Smooth hover transitions.
-- Visible focus states.
-- Appropriate disabled states.
-
-### Cards
-
-Cards should use dark surface backgrounds with subtle borders.
-
-They should have:
-
-- Consistent internal spacing.
-- Clear visual hierarchy.
-- Rounded corners.
-- Subtle hover effects when interactive.
-
-### Tags and Badges
-
-Use compact tags for technologies, categories, and project metadata.
-
-Avoid unnecessary colors and excessive tagging.
+A small personal wordmark or initials may be used as the navigation identity.
 
 ---
 
-## 8. Animation and Interaction
+## 7. Hero Section
 
-Animations should improve the user experience without distracting from the content.
+The hero should immediately communicate who the developer is and what kind of work they do.
 
-### Preferred Effects
+### Proposed Content
+
+**DAN CALEB.**
+
+SOFTWARE DEVELOPER · PORTFOLIO
+
+**Building things that make an impact.**
+
+An aspiring developer focused on building useful digital experiences through code, creativity, and continuous learning.
+
+Primary action: Selected Work  
+Secondary action: About Me
+
+### Layout Direction
+
+- Two-column desktop composition inspired by MZ.
+- Strong editorial headline typography inspired by Alex Dev and Sina Dilek.
+- Supporting introduction and clear calls to action.
+- Optional featured-project preview.
+- Responsive single-column arrangement on smaller screens.
+
+The final copy may evolve as the portfolio content develops.
+
+---
+
+## 8. Project Showcase
+
+Projects are among the most important parts of the portfolio.
+
+Each project should communicate its purpose, functionality, technologies, and the developer's contribution.
+
+### Project Presentation
+
+Each project entry should include:
+
+- Project number or category.
+- Project name.
+- Short description.
+- Relevant technologies.
+- Project preview or screenshot.
+- Repository link when available.
+- Live demonstration link when available.
+
+### Visual Direction
+
+- Structured editorial project listings.
+- Large visual previews where useful.
+- Clear project metadata.
+- Consistent spacing and presentation.
+- Subtle hover interactions.
+
+### Initial Featured Project
+
+**WINGMACC — Church Inventory System**
+
+A practical system built to organize and manage church inventory.
+
+The final project description, technology stack, features, and contribution details must be verified against the actual project.
+
+Future project ideas must not be presented as completed projects.
+
+---
+
+## 9. About Section
+
+The About section should communicate the person behind the projects.
+
+Potential content:
+
+- Introduction and background.
+- Current learning journey.
+- Development interests.
+- Technical skills.
+- Goals and aspirations.
+
+The writing should sound genuine and personal rather than exaggerated or overly corporate.
+
+---
+
+## 10. Contact Section
+
+The contact section should provide a straightforward way to reach the developer.
+
+Potential elements:
+
+- Short invitation to connect.
+- Email contact.
+- GitHub profile.
+- Other relevant professional links.
+
+Use clear labels and functional links.
+
+---
+
+## 11. Motion and Interactions
+
+Animations should make the experience feel polished without distracting visitors.
+
+### Preferred Interactions
 
 - Smooth scrolling.
-- Subtle fade-in transitions.
-- Gentle hover transitions.
-- Small movement effects.
-- Smooth navigation interactions.
+- Subtle hover transitions.
+- Gentle entrance animations.
+- Interactive project previews where useful.
+- Clear button feedback.
+- Small navigation transitions.
 
-### Timing Guidelines
+### Motion Guidelines
 
-| Interaction | Duration |
-|---|---|
-| Hover | 150–200ms |
-| Button Feedback | 150ms |
-| Element Transition | 200–300ms |
-| Section Reveal | 400–600ms |
-
-### Animation Rules
-
-- Avoid excessive movement.
-- Keep transitions smooth and purposeful.
-- Avoid unnecessary animation loops.
+- Avoid excessive animation.
 - Respect reduced-motion preferences.
-- Maintain good performance.
+- Prioritize responsiveness and performance.
+- Never make essential content dependent on animation.
 
 ---
 
-## 9. Responsive Design
+## 12. Responsive Design
 
-The website must provide a consistent experience across desktop, tablet, and mobile devices.
+The portfolio must remain usable and visually consistent across:
 
-### Suggested Breakpoints
+- Desktop computers.
+- Laptops.
+- Tablets.
+- Mobile phones.
 
-| Device | Width |
-|---|---|
-| Mobile | Below 640px |
-| Tablet | 640px–1023px |
-| Desktop | 1024px and above |
+### Responsive Requirements
 
-### Responsive Guidelines
+- No horizontal overflow.
+- Readable typography at all screen sizes.
+- Accessible navigation.
+- Properly scaled project previews.
+- Touch-friendly interactive elements.
+- Consistent spacing and alignment.
 
-- Navigation should adapt to smaller screens.
-- Typography should scale appropriately.
-- Multi-column layouts should collapse when necessary.
-- Buttons should remain accessible.
-- Content should never overflow horizontally.
-- Maintain readable spacing on mobile.
+Mobile design should be intentionally adapted rather than simply shrinking the desktop layout.
 
 ---
 
-## 10. Accessibility
+## 13. Accessibility and Usability
 
-- Maintain sufficient text contrast.
+- Maintain readable text contrast.
 - Use semantic HTML elements.
-- Provide accessible labels for interactive controls.
+- Provide meaningful alternative text for informative images.
 - Ensure keyboard navigation works.
-- Include visible focus indicators.
-- Provide alternative text for meaningful images.
+- Give interactive elements clear focus states.
+- Use descriptive link labels.
 - Respect reduced-motion preferences.
 
 ---
 
-## 11. Implementation Guidelines
+## 14. Technical Design Guidelines
 
-- Use Tailwind CSS for styling.
-- Keep colors and design tokens consistent.
-- Use reusable React components.
-- Avoid unnecessary inline styles.
-- Keep component styling maintainable.
-- Avoid arbitrary values when an existing design token is appropriate.
-- Maintain consistency between desktop and mobile designs.
-
----
-
-## 12. Design System Evolution
-
-This document represents the initial visual direction of the portfolio.
-
-Design decisions may evolve during implementation, but significant changes should be reflected here.
-
-Any new component or section should follow the established visual language.
+- Use React components for reusable interface elements.
+- Use Tailwind CSS v4 for styling.
+- Keep content and project data separate from presentation where practical.
+- Maintain consistent naming conventions.
+- Avoid unnecessary dependencies.
+- Keep components focused and maintainable.
+- Test changes using ESLint and production builds.
 
 ---
 
-**Design Principle:**
+## 15. Design Decisions Still Open
 
-A premium interface does not need to be complicated. Every visual element should have a purpose.
+The following decisions will be finalized during implementation planning:
+
+- Exact display and body font combination.
+- Final typography scale.
+- Personal logo or wordmark.
+- Hero visual composition.
+- Project preview presentation.
+- Animation details.
+- Mobile navigation behavior.
+- Final color refinements after browser testing.
+
+---
+
+## 16. Final Design Goal
+
+The finished portfolio should feel like a thoughtfully designed developer identity.
+
+It should balance technical credibility, creative personality, and professional presentation.
+
+**The goal is not to look like the most experienced developer. The goal is to present the developer's actual work, abilities, and potential in the strongest honest way possible.**
