@@ -27,7 +27,9 @@ export default function Footer() {
           className="flex items-center gap-1.5 text-[#A1AAB5] hover:text-[#40C9BD] transition-colors cursor-pointer"
         >
           <span>Back to Top</span>
-          <span aria-hidden="true">↑</span>
+          <span aria-hidden="true" className="float">
+            ↑
+          </span>
         </button>
       </div>
     </footer>

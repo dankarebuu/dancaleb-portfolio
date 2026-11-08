@@ -2,7 +2,7 @@ import dashboardImg from '../assets/wingmacc/dashboard.png'
 
 export default function ProjectCaseStudy({ project }) {
   return (
-    <article className="border border-[#27313A] bg-[#11171D] rounded-xl overflow-hidden transition-colors hover:border-[#40C9BD]/40">
+    <article className="card-lift border border-[#27313A] bg-[#11171D] rounded-xl overflow-hidden hover:border-[#40C9BD]/40">
       {/* Top Header Bar */}
       <div className="flex flex-wrap items-center justify-between gap-4 border-b border-[#27313A] px-6 py-4 bg-[#171F27]/50 font-mono text-xs">
         <div className="flex items-center gap-3">

@@ -113,19 +113,14 @@
 
 ---
 
-## Phase 5 — Deployment and Launch
-
-**Goal:** Publish the portfolio online.
-
-- [ ] Prepare production build.
-- [ ] Verify production build locally.
-- [ ] Connect GitHub repository to Netlify.
-- [ ] Configure deployment settings.
-- [ ] Deploy website.
-- [ ] Verify live website.
-- [ ] Test live links and navigation.
-- [ ] Update GitHub repository information.
-- [ ] Finalize portfolio launch.
+#### Phase 5 — Deployment and Launch
+* [x] Prepare production build.
+* [x] Verify production build locally.
+* [x] Connect GitHub repository to Netlify.
+* [x] Configure deployment settings.
+* [x] Deploy website.
+* [x] Verify live website.
+* [x] Test live links and navigation.
 
 **Completion Criteria:** The portfolio is publicly accessible and functioning correctly.
 

@@ -1,1 +1,145 @@
 @import "tailwindcss";
+
+/*
+ * Design tokens — Dan Caleb Portfolio
+ * Dark editorial theme. Charcoal surfaces, cool neutrals, turquoise accent.
+ */
+
+@layer base {
+  :root {
+    --bg: #0B0E11;
+    --surface: #11171D;
+    --surface-elevated: #171F27;
+    --border: #27313A;
+    --accent: #40C9BD;
+    --accent-hover: #54D8CC;
+    --text-primary: #F1F3F5;
+    --text-secondary: #A1AAB5;
+    --text-muted: #778391;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: 'Inter', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    background-color: var(--bg);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Display / heading typeface — expressive but refined */
+  h1, h2, h3, h4, .font-display {
+    font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, sans-serif;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+  }
+
+  /* Monospace — technical labels, metadata, numbers */
+  code, .font-mono {
+    font-family: 'JetBrains Mono', ui-monospace, 'SFMono-Regular', Menlo, Consolas, monospace;
+  }
+}
+
+@layer utilities {
+  /* Subtle text gradient on display headings */
+  .text-gradient {
+    background: linear-gradient(135deg, #F1F3F5 0%, #A1AAB5 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  /* Accent-tinted gradient for hero highlight */
+  .text-gradient-accent {
+    background: linear-gradient(135deg, #40C9BD 0%, #54D8CC 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+}
+
+/* --- Scroll reveal animations --- */
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal-fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.reveal {
+  animation: reveal-up 0.7s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.reveal-fade {
+  animation: reveal-fade 0.6s ease both;
+}
+
+.float {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Subtle lift on hover for project cards */
+@keyframes lift {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-4px);
+  }
+}
+
+.card-lift {
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+.card-lift:hover {
+  animation: lift 0.4s ease forwards;
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .reveal,
+  .reveal-fade,
+  .float {
+    animation: none !important;
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
