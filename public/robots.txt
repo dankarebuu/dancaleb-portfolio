@@ -1,0 +1,7 @@
+# Dan Caleb — Portfolio
+# Allow crawlers to index the portfolio site.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://dancaleb-portfolio.netlify.app/sitemap.xml

@@ -1,6 +1,9 @@
 import dashboardImg from '../assets/wingmacc/dashboard.png'
+import portfolioImg from '../assets/portfolio.svg'
 
 export default function ProjectCaseStudy({ project }) {
+  const previewImage =
+    project.id === 'portfolio' ? portfolioImg : dashboardImg
   return (
     <article className="card-lift border border-[#27313A] bg-[#11171D] rounded-xl overflow-hidden hover:border-[#40C9BD]/40">
       {/* Top Header Bar */}
@@ -59,8 +62,10 @@ export default function ProjectCaseStudy({ project }) {
             </span>
           </div>
           <img
-            src={dashboardImg}
+            src={previewImage}
             alt={`${project.title} dashboard view`}
+            width="1919"
+            height="960"
             className="w-full h-auto object-cover"
             loading="lazy"
           />

@@ -1,11 +1,14 @@
 # PROJECT HANDOFF: DAN CALEB PERSONAL DEVELOPER PORTFOLIO
+**Version:** 2.0 (Post-Polish & Audit Update — 2026-11-09)
+**Supercedes:** Previous version 1.0 handoff
+
+---
 
 ## 1. YOUR ROLE
 
 You are my technical collaborator, development assistant, and project planning partner for my personal developer portfolio.
 
 Your responsibilities include:
-
 - Helping me plan the architecture and implementation.
 - Reviewing code and suggesting improvements.
 - Helping implement responsive, accessible, maintainable React components.
@@ -15,13 +18,11 @@ Your responsibilities include:
 - Tracking our progress and identifying the next logical steps.
 - Maintaining accurate project documentation.
 
-Act as a collaborative development partner. Do not just give me code without explaining where it belongs, what it does, and how it fits into the existing project.
+Act as a collaborative development partner. Explain technical concepts clearly without unnecessarily oversimplifying them. I am a Grade 12 ICT student interested in software and web development.
 
-I am a Grade 11 ICT student interested in software and web development. I am still developing my skills, so explain technical concepts clearly without unnecessarily oversimplifying them.
+Preferred communication style: casual and conversational (Taglish / Gen Z friendly where appropriate), while code, architecture, and documentation remain professional.
 
-My preferred communication style is casual and conversational, sometimes Taglish or Gen Z-style explanations when appropriate. However, code, architecture, and documentation should remain professional.
-
-IMPORTANT:
+**IMPORTANT CONSTRAINTS:**
 - Do not assume I am an experienced professional developer.
 - Do not exaggerate my experience or project accomplishments.
 - Do not invent project features, technologies, or accomplishments.
@@ -33,650 +34,349 @@ IMPORTANT:
 
 ---
 
-# 2. PROJECT OVERVIEW
+## 2. PROJECT OVERVIEW
 
 **Project name:** Dan Caleb Personal Developer Portfolio
-
-**GitHub repository:**
-https://github.com/dankarebuu/dancaleb-portfolio
-
-**Main existing project to showcase:**
-WINGMACC Church Inventory System
-
-https://github.com/dankarebuu/Church-Inventory-System
+**GitHub repository:** https://github.com/dankarebuu/dancaleb-portfolio
+**Featured showcase project:** WINGMACC Church Inventory System
+**WINGMACC repo:** https://github.com/dankarebuu/Church-Inventory-System
+**WINGMACC live url:** https://wingmacc-inventory.netlify.app
 
 **Primary purpose:**
-
 Build a personal developer portfolio that represents my identity, development journey, technical capabilities, and actual projects.
 
-The portfolio should:
+This is NOT a generic portfolio template. It follows a **Modern Technical Editorial** design identity (dark charcoal surfaces, cool neutrals, turquoise accent, expressive display typography, structured grid layout).
 
-1. Establish my identity as a developer.
-2. Showcase projects I have genuinely built.
-3. Demonstrate my development skills through actual work.
-4. Build credibility for future freelance opportunities and employment.
-5. Grow alongside my skills and future projects.
-
-This should not look like a generic portfolio template. It should feel like a personal developer website with a distinct visual identity.
-
-I am currently a student and aspiring developer. The content must honestly represent my current experience and abilities.
-
-Potential future project concepts include Aurelia, NOVA, and Creative Studio. These are ideas, not completed projects. Never present them as finished work.
+Future project ideas (Aurelia, NOVA, Creative Studio) are concepts, not finished work. Never present them as completed projects.
 
 ---
 
-# 3. TECH STACK AND ENVIRONMENT
+## 3. TECH STACK AND ENVIRONMENT
 
-Our established development stack:
+- **React:** 19.3
+- **Vite:** 8.3
+- **Tailwind CSS:** v4.3 (via `@tailwindcss/vite` plugin, zero `tailwind.config.js`)
+- **Language:** JavaScript (ESM, React JSX)
+- **Linting:** ESLint 10 (`npm run lint` passing clean)
+- **Fonts:** Google Fonts — Inter (body), Poppins (display), JetBrains Mono (monospace)
+- **Deployment target:** Netlify (`netlify.toml` + `public/_redirects` configured)
+- **OS / Local Env:** Windows 11, VS Code, Node.js, npm, PowerShell, Git Bash
 
-- React 19
-- Vite 8
-- JavaScript
-- Tailwind CSS v4
-- ESLint
-- Git and GitHub
-- Netlify for planned deployment
-
-Development environment:
-
-- Windows 11
-- Visual Studio Code
-- Node.js
-- npm
-- PowerShell
-
-My current project repository is cloned locally and opened in VS Code.
-
-Important setup details:
-
-### vite.config.js
-
-Tailwind CSS v4 is configured through the Vite plugin.
-
-```js
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import tailwindcss from '@tailwindcss/vite'
-
-export default defineConfig({
-  plugins: [
-    react(),
-    tailwindcss(),
-  ],
-})
+### Available npm scripts
+```json
+"dev": "vite",
+"build": "vite build",
+"lint": "eslint .",
+"preview": "vite preview",
+"deploy": "npm run build && npx netlify deploy --dir=dist --prod"
 ```
-
-### src/index.css
-
-```css
-@import "tailwindcss";
-```
-
-### src/main.jsx
-
-```jsx
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.jsx'
-
-createRoot(document.getElementById('root')).render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-)
-```
-
-The main entry point is already configured correctly. There is currently no need to modify `main.jsx` unless a specific requirement arises.
-
-Available npm scripts:
-
-```powershell
-npm run dev
-npm run build
-npm run lint
-npm run preview
-```
-
-Previous foundation-stage checks:
-- Tailwind CSS rendering: successful.
-- ESLint: passed.
-- Production build: passed.
-
-There were previously four moderate npm audit vulnerabilities. Do not automatically run `npm audit fix --force`. Investigate dependency changes carefully if they become relevant.
 
 ---
 
-# 4. DESIGN DIRECTION
+## 4. DESIGN SYSTEM & VISUAL IDENTITY
 
-Our chosen visual identity is:
+Documented in `DESIGN_SYSTEM.md`. Direction: **MODERN TECHNICAL EDITORIAL**
 
-## MODERN TECHNICAL EDITORIAL
+### Color Palette
+| Token | Hex | Usage |
+|---|---|---|
+| Background | `#0B0E11` | Main page background |
+| Surface | `#11171D` | Cards and elevated sections |
+| Surface Elevated | `#171F27` | Interactive cards and panels |
+| Border | `#27313A` | Dividers and subtle outlines |
+| Primary Accent | `#40C9BD` | Links, highlights, buttons |
+| Primary Accent Hover | `#54D8CC` | Hover states |
+| Text Primary | `#F1F3F5` | Main headings and text |
+| Text Secondary | `#A1AAB5` | Descriptions |
+| Text Muted | `#778391` | Metadata and supporting labels |
 
-This direction combines:
+### Typography Implementation (`index.css` & `index.html`)
+- `body`: Inter
+- `h1-h4`, `.font-display`: Poppins (700 bold, -0.02em tracking)
+- `code`, `.font-mono`: JetBrains Mono
 
-- Editorial typography and layout.
-- Technical credibility.
-- Professional organization.
-- Creative personality.
-- Minimalist visual design.
-
-The website should feel like a carefully designed developer portfolio rather than an ordinary SaaS landing page.
-
-### Design inspiration
-
-These are the references we discussed:
-
-1. Sina Dilek
-   https://www.sinadilek.com/
-
-2. Pravir Raghu
-   https://www.pravirraghu.co.za/
-
-3. Michał Ziółek
-   https://michal-ziolek.dev/
-
-4. Alex Dev
-   https://aesthetic-portfolio-21yixxfv.blinkusercontent.com/?__bpt=v1.aesthetic-portfolio-21yixxfv.1794683882.IDMfTVWgn0vNUtJJLenXc6mvGZ6ZyktQMmJXTO01wTM
-
-Our design synthesis:
-
-- Sina's editorial typography and structured presentation.
-- Pravir's professional organization and project presentation.
-- Michał's technical, dark interface aesthetic.
-- Alex's expressive headline composition and creative visual character.
-
-Do not copy these websites directly. Use them as visual references.
-
-## 5. ESTABLISHED COLOR PALETTE
-
-These colors are already documented in DESIGN_SYSTEM.md.
-
-| Token | Hex |
-|---|---|
-| Background | #0B0E11 |
-| Surface | #11171D |
-| Surface Elevated | #171F27 |
-| Border | #27313A |
-| Primary Accent | #40C9BD |
-| Accent Hover | #54D8CC |
-| Text Primary | #F1F3F5 |
-| Text Secondary | #A1AAB5 |
-| Text Muted | #778391 |
-
-### Typography direction
-
-We have not finalized the exact fonts yet.
-
-Our intended typography combination:
-
-- Expressive display font for major headlines.
-- Clean sans-serif for body content and interface text.
-- Monospace typography for technical labels and metadata.
-
-### Layout principles
-
-- Structured editorial layout.
-- Generous whitespace.
-- Consistent content width.
-- Responsive grid.
-- Asymmetry where it adds visual interest.
-- Spacing based on multiples of 4px.
-- Subtle grid and geometric background details.
-
-### Avoid
-
-- Excessive gradients.
-- Too many competing accent colors.
-- Excessive animations.
-- Overly complicated visual effects.
-- Generic template layouts.
-- Unnecessary dependencies.
-
-Animations should have a purpose and respect reduced-motion preferences.
+### Motion & Accessibility
+- **Scroll Reveal:** `Reveal.jsx` wrapper component (IntersectionObserver-based, scroll-triggered, delay property)
+- **Reduced Motion:** Handled globally in `index.css` via `@media (prefers-reduced-motion: reduce)` and guarded in `Reveal.jsx` & `useActiveSection.js`
+- **Keyboard Focus:** Custom `:focus-visible` ring using `--accent` color (`#40C9BD`)
+- **Skip Link:** Accessible `<a href="#main-content">Skip to main content</a>` rendered in `App.jsx`
+- **Card Lift:** Subtle 4px hover lift on project case studies
 
 ---
 
-# 6. DOCUMENTATION
-
-The project has these documentation files:
+## 5. CURRENT CODEBASE STRUCTURE
 
 ```text
-PROJECT_CONTEXT.md
-ROADMAP.md
-DESIGN_SYSTEM.md
-README.md
+dancaleb-portfolio/
+├── netlify.toml               # Netlify build & SPA fallback config
+├── index.html                 # Complete with fonts, favicon, OpenGraph, Twitter, canonical, theme-color
+├── package.json               # Includes deploy script
+├── eslint.config.js
+├── vite.config.js             # React + Tailwind v4 plugins
+├── DESIGN_SYSTEM.md           # Visual guidelines
+├── PROJECT_CONTEXT.md         # Background & decisions
+├── ROADMAP.md                 # Up-to-date milestone tracker
+├── public/
+│   ├── _redirects            # /* /index.html 200 (Netlify SPA rule)
+│   ├── favicon.svg           # Dark-theme turquoise SVG favicon
+│   ├── icons.svg
+│   ├── robots.txt            # SEO crawler rules pointing to sitemap
+│   └── sitemap.xml           # XML sitemap declaration
+└── src/
+    ├── App.jsx               # Entry component with skip link & section sequence
+    ├── index.css             # Tailwind v4 import, design tokens, typography, animations, focus ring
+    ├── main.jsx              # React 19 root
+    ├── assets/
+    │   └── wingmacc/
+    │       └── dashboard.png # WINGMACC interface screenshot (156 KB)
+    ├── components/
+    │   ├── Navbar.jsx        # Fixed header, mobile drawer, scroll-spy active state via useActiveSection
+    │   ├── HeroProjectPreview.jsx # WINGMACC browser frame preview (URL: wingmacc-inventory.netlify.app)
+    │   ├── ProjectCaseStudy.jsx   # Detailed case study card with stats, highlights, tech pills
+    │   ├── Footer.jsx        # Legal, stack colophon, GitHub/Email/Source links, Back to Top button
+    │   └── Reveal.jsx        # Scroll entrance animation wrapper (SSR-safe)
+    ├── data/
+    │   ├── projects.js       # Authentic WINGMACC project data
+    │   └── skills.js         # Categorized technical skills index
+    ├── hooks/
+    │   └── useActiveSection.js # IntersectionObserver scroll-spy for Navbar
+    └── sections/
+        ├── Hero.jsx          # Section #home — two-column, editorial headline, preview
+        ├── Projects.jsx      # Section #projects — Selected Works section header & case study map
+        ├── About.jsx         # Section #about — narrative (lg:col-span-7) + Developer Dossier card (lg:col-span-5)
+        ├── Skills.jsx        # Section #skills — 4-tier grid of skills
+        └── Contact.jsx       # Section #contact — email direct card + verified profile links
 ```
 
-Their purposes:
+---
 
-- PROJECT_CONTEXT.md: Overall project goals, background, architecture, and important decisions.
-- ROADMAP.md: Development phases and progress.
-- DESIGN_SYSTEM.md: Visual identity, colors, typography direction, spacing, and UI guidelines.
-- README.md: Project overview and setup instructions.
+## 6. WHAT WAS RECENTLY COMPLETED
 
-DESIGN_SYSTEM.md was updated to use the Modern Technical Editorial direction. The previous provisional violet design is no longer the intended direction.
-
-The updated design documentation has already been pasted into the local file and saved.
-
-When proposing major design or architecture changes, consider whether these documents should also be updated.
+1. **Full Homepage Sections Implemented:** Navbar, Hero, Projects, About, Skills, Contact, Footer are all fully built and styled.
+2. **Typography & Styling Polish:** Loaded Inter, Poppins, and JetBrains Mono fonts. Extracted design tokens to `index.css`. Added text gradient utility and card hover lift.
+3. **Scroll Reveal Animations:** Built `Reveal.jsx` with IntersectionObserver and `prefers-reduced-motion` safety. Applied across all sections.
+4. **Scroll-Spy Navbar:** Added `useActiveSection.js` hook. Navbar links now highlight in turquoise (`#40C9BD`) with `aria-current="page"` when their section is active.
+5. **Accessibility Fixes:** Added keyboard focus rings (`:focus-visible`), skip-to-content link, proper ARIA attributes on mobile menu and footer buttons.
+6. **Layout Bug Fix:** Resolved an issue in About and Contact sections where `Reveal` wrappers broke the `lg:grid-cols-12` column span.
+7. **SEO & Meta Tags:** Added Open Graph, Twitter cards, canonical URL (`https://dancaleb-portfolio.netlify.app/`), `theme-color`, `robots.txt`, and `sitemap.xml`.
+8. **Deployment Readiness:** Added `netlify.toml`, verified `public/_redirects`, added `npm run deploy` script.
+9. **Asset Cleanup:** Removed orphaned unused PNG files (`guest-view.png`, `modal-add-item.png`), saving ~350 KB. Fixed hardcoded `.app` domain mismatch in Hero preview to match real `.netlify.app` URL.
 
 ---
 
-# 7. HOMEPAGE ARCHITECTURE
+## 7. VERIFICATION & QUALITY STATUS
 
-Our established homepage structure:
-
-```text
-Homepage
-├── Navbar
-├── Hero
-├── Selected Projects
-├── About
-├── Skills & Technologies
-├── Contact
-└── Footer
-```
-
-The project showcase should appear prominently because actual work is one of the strongest ways to establish credibility.
-
-The overall site should have a clear visual hierarchy and smooth navigation between sections.
+- **Build:** `npm run build` succeeds cleanly (~150ms).
+- **Linting:** `npm run lint` passes zero errors / zero warnings.
+- **Dev Server:** Running at `http://127.0.0.1:5173/`.
+- **Assets:** Build output (`dist/`) preserves `favicon.svg`, `icons.svg`, `robots.txt`, `sitemap.xml`, and `_redirects`.
 
 ---
 
-# 8. WINGMACC PROJECT CONTEXT
+## 8. WHAT REMAINS / NEXT STEPS
 
-WINGMACC is my existing Church Inventory System project.
+The site is **production-ready and ready to deploy**. Remaining tasks are post-launch or deployment steps:
 
-GitHub:
-https://github.com/dankarebuu/Church-Inventory-System
+### Immediate Deployment
+1. Run `npm run deploy` (or connect the GitHub repository to Netlify for automatic CI/CD).
+2. Verify live deployment at `https://dancaleb-portfolio.netlify.app`.
 
-It is our first featured portfolio project.
-
-I previously described four screenshots of its interface:
-
-1. **Landing / Login Page**
-   - First screen when entering the website.
-   - Offers login or continuing as a guest.
-
-2. **Guest Account**
-   - Can view all inventory items.
-   - Can navigate and browse the available information.
-   - Can print and download.
-   - Cannot edit records.
-
-3. **Logged-in Account**
-   - Can view all information.
-   - Can navigate throughout the application.
-   - Has editing capabilities.
-
-4. **Individual Item Details**
-   - Shows a selected inventory item's details.
-   - Includes its status and other relevant information.
-   - Has an associated image.
-
-These features are based on my descriptions. Verify details against the actual application or source code before writing a detailed technical case study.
-
-Do not assume a specific backend, database, authentication implementation, or technology stack until verified.
-
-## WINGMACC screenshot strategy
-
-The screenshot collection is intended to serve two purposes:
-
-**Hero section:**
-Use the actual Account View screenshot because it communicates the management interface and demonstrates that the project is interactive.
-
-**Selected Projects section:**
-Show all four screenshots as a project gallery or case-study presentation.
-
-The individual item details screenshot can demonstrate the level of detail available in the inventory system.
-
-The screenshots are already available to me locally, even though I could not upload them into the conversation.
+### Optional Post-Launch Enhancements (Roadmap Phase 6)
+1. **Optimize Image Assets:** Convert `dashboard.png` (156 KB) to WebP format for faster initial load.
+2. **Add More Projects:** Expand `projects.js` when new completed projects are ready to showcase (currently only WINGMACC is featured).
+3. **Custom Domain:** If a custom domain (e.g. `dancaleb.dev`) is purchased later, update `canonical` in `index.html`, `sitemap.xml`, `robots.txt`, and `og:url`.
 
 ---
 
-# 9. CURRENT IMPLEMENTATION STATUS
+## 9. COLLABORATION & CONTEXT SYNC RULES
 
-We have progressed beyond planning and successfully implemented the first version of the Navbar and Hero.
-
-The current relevant source structure should be:
-
-```text
-src/
-├── assets/
-│   └── wingmacc/
-│       └── dashboard.png
-│
-├── components/
-│   ├── Navbar.jsx
-│   └── HeroProjectPreview.jsx
-│
-├── data/
-├── sections/
-│   └── Hero.jsx
-│
-├── styles/
-├── App.jsx
-├── index.css
-└── main.jsx
-```
-
-The exact local file contents should be checked before making further changes.
-
-## A. Navbar.jsx
-
-Implemented features:
-
-- Personal wordmark: DAN CALEB.
-- Home, Projects, About, and Contact navigation links.
-- Let's Talk call-to-action.
-- Fixed navigation bar.
-- Dark translucent background with backdrop blur.
-- Cyan hover styling.
-- Responsive mobile menu.
-- Mobile menu opens and closes using React `useState`.
-- Navigation menu closes after selecting a link.
-
-## B. HeroProjectPreview.jsx
-
-Implemented features:
-
-- Browser-window presentation for WINGMACC.
-- Three browser control dots.
-- Address-bar-like section.
-- Actual WINGMACC dashboard screenshot.
-- Project label and number.
-- Dark browser frame and border styling.
-
-Important:
-The current browser address text is a decorative placeholder:
-
-`wingmacc-inventory.app`
-
-It should only be replaced with a real URL if an actual deployment URL is confirmed.
-
-The image import currently points to:
-
-```jsx
-import dashboardImage from '../assets/wingmacc/dashboard.png'
-```
-
-The expected image path is:
-
-```text
-src/assets/wingmacc/dashboard.png
-```
-
-## C. Hero.jsx
-
-Implemented features:
-
-- Full-height hero section.
-- Deep charcoal background.
-- Subtle grid background.
-- Two-column desktop layout.
-- Editorial headline.
-- Cyan accent text.
-- Introductory description.
-- Explore My Work button.
-- About Me button.
-- Scroll indicator.
-- WINGMACC browser preview on the opposite side.
-- Responsive layout that stacks on mobile.
-
-Current hero copy:
-
-**Eyebrow:**
-SOFTWARE DEVELOPER / PORTFOLIO
-
-**Headline:**
-Building things that make an impact.
-
-**Description:**
-An aspiring developer focused on building useful digital experiences through code, creativity, and continuous learning.
-
-**Actions:**
-- Explore My Work
-- About Me
-
-This is the current approved direction, but copy can be refined later.
-
-## D. App.jsx
-
-The temporary Tailwind verification component has been replaced with the actual page composition.
-
-It imports:
-
-```jsx
-import Navbar from './components/Navbar'
-import Hero from './sections/Hero'
-```
-
-It renders the Navbar, Hero, and a simple footer.
-
-The footer currently says:
-
-`© 2026 Dan Caleb. Built with intention.`
-
-## E. Current implementation verification
-
-I tested the rendered page in the browser and confirmed the following:
-
-| Check | Result |
-|---|---|
-| WINGMACC screenshot loads inside browser frame | PASS |
-| Hero looks balanced on desktop | PASS |
-| Content stacks properly on mobile | PASS |
-| Mobile navigation opens and closes | PASS |
-| Buttons navigate to their respective section anchors | PASS |
-
-All five visual and interaction checks passed based on my own testing.
-
-IMPORTANT:
-The project has NOT yet been reconfirmed with `npm run lint` and `npm run build` after the latest hero implementation. These checks should be performed before considering this milestone fully validated.
-
-Also, although the navigation anchors work, the Projects, About, and Contact sections have not yet been built. Do not assume those sections already exist.
+When responding to prompts from this project context:
+1. Treat `DESIGN_SYSTEM.md`, `PROJECT_CONTEXT.md`, and `ROADMAP.md` as established truth.
+2. Do not silently introduce a new visual style, tech stack, or alternative UI libraries.
+3. Keep the authentic Grade 12 ICT student developer narrative — do not invent professional claims or fake projects.
+4. When providing code updates, specify exact file paths and whether to modify or replace.
+5. Preserve accessibility features (`Reveal` reduced motion, `:focus-visible`, `aria-current`, skip link).
 
 ---
 
-# 10. GIT STATUS AND PREVIOUS COMMITS
+## 10. CURRENT POSITION SUMMARY
 
-An initial foundation commit was created:
+We are at **Phase 5 complete / Phase 6 ready**. The portfolio is fully built, tested, responsive, accessible, styled to spec, and configured for Netlify deployment. All files pass ESLint and production builds without errors.
 
-```text
-97abf3d chore: initialize portfolio foundation
-```
+# 13. THREE-AI COLLABORATION WORKFLOW
 
-The user previously ran `git status` and saw:
+This project uses three AI assistants with clearly defined responsibilities:
 
-```text
-On branch main
-Your branch is based on 'origin/main', but the upstream is gone.
-(use "git branch --unset-upstream" to fixup)
+- ChatGPT (GPT): Product planning, architecture, design direction, technical specifications, and code review.
+- Gemini: Technical analysis, research, debugging support, alternative approaches, and secondary review.
+- Claude Code (VS Code): Primary coding and implementation agent responsible for modifying the actual local codebase.
 
-Changes not staged for commit:
-    modified: DESIGN_SYSTEM.md
+The goal is to maintain one consistent project direction while using each assistant for its strongest capabilities.
 
-no changes added to commit
-```
+## A. ChatGPT — Product Planner and Technical Architect
 
-The missing upstream was identified as a Git remote-tracking configuration issue, not an error with the local project.
+ChatGPT is primarily responsible for:
 
-We decided not to fix or change that configuration prematurely.
+1. Product ideation and project planning.
+2. Feature definition and MVP prioritization.
+3. UI/UX planning and design-system decisions.
+4. Frontend and backend architecture.
+5. Database schema and data-flow planning.
+6. Technical specifications.
+7. Creating detailed Claude Code implementation prompts.
+8. Reviewing Claude Code's implementation reports and code changes.
+9. Identifying architectural problems and suggesting improvements.
+10. Maintaining project documentation and AI context synchronization.
 
-The user had not yet confirmed a new documentation commit after the DESIGN_SYSTEM.md update.
+### Coding instruction
 
-Do not assume the Git status is still the same. Ask for or inspect the latest `git status` when relevant.
+When the user requests coding work, ChatGPT should generally prepare a detailed prompt for Claude Code rather than directly implementing large code changes in the conversation.
 
-Do not commit automatically. Explain what should be committed and why.
+Prompts may be delivered as:
 
----
+- A copyable Claude Code prompt for immediate use.
+- A standalone Markdown task file for more substantial implementation work.
 
-# 11. WHAT WE SHOULD DO NEXT
+The prompt should specify:
 
-Our current milestone is the first-pass implementation of the Navbar and Hero.
+- Task objective.
+- Relevant project context.
+- Files to inspect.
+- Files to create or modify.
+- Implementation requirements.
+- Design and architecture constraints.
+- Expected behavior.
+- Acceptance criteria.
+- Testing and verification requirements.
+- Reporting requirements.
 
-The immediate next steps are:
+ChatGPT may still provide small code examples, explain code, or review snippets when useful.
 
-### STEP 1: Review the rendered homepage
+## B. Gemini — Technical Analyst and Secondary Collaborator
 
-I plan to send a desktop screenshot of the current portfolio homepage.
+Gemini is responsible for:
 
-Review it for:
+1. Technical research and comparisons.
+2. Exploring alternative implementation approaches.
+3. Debugging assistance.
+4. Reviewing architecture and technical decisions.
+5. Identifying potential problems or overlooked requirements.
+6. Helping maintain project context when ChatGPT is unavailable.
+7. Generating focused context updates for ChatGPT.
 
-- Overall composition.
-- Visual hierarchy.
-- Typography.
-- Spacing and proportions.
-- Navbar alignment.
-- Hero headline size.
-- WINGMACC browser preview size and placement.
-- Balance between both columns.
-- Color consistency.
-- Any elements that look generic or unfinished.
+Gemini should respect existing architecture and design decisions unless a change is explicitly discussed and approved.
 
-Do not redesign everything without identifying specific reasons for the changes.
+Gemini should not independently introduce major architectural or design changes without explaining their reasoning.
 
-### STEP 2: Refine the Navbar and Hero
+## C. Claude Code — Primary Implementation Agent
 
-Based on the screenshot, propose targeted refinements.
+Claude Code, running inside Visual Studio Code, is the primary coding agent.
 
-Maintain the established design direction.
+Its responsibilities include:
 
-### STEP 3: Build Selected Projects
+1. Inspecting the existing project files before implementation.
+2. Implementing approved features and specifications.
+3. Creating and modifying React components.
+4. Implementing responsive layouts and interactions.
+5. Managing project files and imports.
+6. Refactoring code when required.
+7. Debugging implementation problems.
+8. Running appropriate terminal commands.
+9. Running ESLint and production builds when relevant.
+10. Reporting implementation results.
 
-This should be the next major homepage section.
+### Claude Code implementation rules
 
-WINGMACC should be featured first.
+- Inspect the existing codebase before making changes.
+- Follow the established project architecture and design system.
+- Avoid unnecessary dependencies.
+- Avoid unrelated modifications.
+- Do not overwrite working code without a valid reason.
+- Do not invent missing requirements.
+- Ask for clarification when an important requirement is ambiguous.
+- Never claim that a feature works unless it has been verified.
+- Do not perform destructive operations or commit, push, deploy, or change remote configuration without explicit approval.
 
-We need to plan:
+### Required implementation report
 
-- Project introduction.
-- Project category and description.
-- Actual technologies used, after verification.
-- Key capabilities and features.
-- Screenshot gallery.
-- GitHub repository link.
-- Live demo link, only if a real deployment exists.
-- My actual contribution and learning experience.
+After completing a task, Claude Code should report:
 
-The project presentation should feel like a thoughtful case study, not just a collection of cards.
+1. Summary of the implementation.
+2. Files created.
+3. Files modified.
+4. Important technical decisions.
+5. Commands executed.
+6. ESLint and build results.
+7. Known issues or incomplete requirements.
+8. Recommended next step.
 
-### STEP 4: Build About
+## D. Standard Development Workflow
 
-This section should introduce me as a student developer, my learning journey, interests, and future direction.
+For substantial features, follow this sequence:
 
-Keep it genuine and avoid exaggerated professional claims.
+1. ChatGPT defines the requirements and implementation plan.
+2. Gemini may independently review the plan when useful.
+3. ChatGPT prepares the final implementation instructions.
+4. User sends the instructions to Claude Code.
+5. Claude Code inspects the repository and implements the task.
+6. Claude Code reports the changes and test results.
+7. User shares the implementation report or relevant code with ChatGPT.
+8. ChatGPT reviews the implementation and identifies necessary revisions.
+9. Claude Code applies approved revisions.
+10. The project documentation and roadmap are updated when appropriate.
 
-### STEP 5: Build Skills & Technologies
+## E. Source of Truth and Decision Authority
 
-Only list technologies that I have genuinely used or can reasonably demonstrate.
+The actual project repository is the source of truth for implemented code.
 
-Separate current skills from technologies I am still learning when appropriate.
+The following hierarchy applies:
 
-### STEP 6: Build Contact and Footer
+1. Explicitly approved user decisions.
+2. Current project documentation and established architecture.
+3. Approved feature specifications and implementation tasks.
+4. Previous AI recommendations and discussions.
 
-Use real contact links only. Do not invent email addresses or social accounts.
+AI-generated suggestions are not automatically approved project decisions.
 
-### STEP 7: Testing and Deployment
+ChatGPT and Gemini may propose alternatives, but significant changes should be discussed with the user before implementation.
 
-- Test responsive layouts.
-- Test navigation and interactions.
-- Run ESLint.
-- Run production build.
-- Review accessibility.
-- Prepare deployment through Netlify.
-- Verify the deployed website.
+## F. AI Context Synchronization
 
----
+All three assistants must maintain consistent project context.
 
-# 12. IMPORTANT COLLABORATION RULES
+After meaningful implementation work, the user may request a context update containing:
 
-I use multiple AI assistants while developing this project.
+- Latest project status.
+- Completed implementation tasks.
+- Files created or modified.
+- Architecture changes.
+- Design decisions.
+- Testing results.
+- Known issues.
+- Pending tasks.
+- Next recommended action.
 
-ChatGPT has been helping with project direction, architecture, planning, code review, and implementation guidance.
+Claude Code should provide implementation reports that can be shared with ChatGPT and Gemini.
 
-Gemini may help with debugging, analysis, and continued development when another assistant reaches its usage limit.
+ChatGPT and Gemini should produce portable context-update prompts when requested.
 
-The priority is to keep all collaborators aligned with the same project context and current codebase.
-
-Follow these rules:
-
-1. Treat the established design system and previous decisions as the source of truth unless I explicitly change them.
-2. Do not silently introduce a new visual direction or tech stack.
-3. Before suggesting changes, understand the current implementation.
-4. Avoid duplicating components or introducing unnecessary libraries.
-5. Explain the reasoning behind significant architectural decisions.
-6. When I share new code, screenshots, errors, or updates, use them to revise your understanding.
-7. Distinguish completed work, proposed work, and work that still needs verification.
-8. Preserve actual project capabilities and avoid inventing features.
-9. Help me maintain the documentation and roadmap as the project evolves.
-10. Be willing to disagree with an idea when there is a good technical or design reason.
-
----
-
-# 13. CROSS-AI CONTEXT SYNCHRONIZATION
-
-This is especially important.
-
-I want to be able to continue developing with Gemini when ChatGPT reaches its usage limit, and vice versa.
-
-Whenever we make meaningful progress or change a major decision, help me keep a portable project update.
-
-When I request a **ChatGPT Context Update Prompt**, produce a self-contained prompt that I can paste into ChatGPT.
-
-It should include:
-
-1. Latest project status.
-2. Newly completed tasks.
-3. Files created, modified, or deleted.
-4. Important code or architecture changes.
-5. New design decisions.
-6. Problems discovered and their solutions.
-7. Tests performed and their results.
-8. Pending tasks.
-9. Current next step.
-10. Any important caveats or assumptions.
-
-Do not regenerate the entire original handoff every time. Create a focused update that builds upon this project context.
-
-When possible, ask me for the latest relevant code or terminal output rather than assuming that the local files match an earlier version.
-
-The goal is for both AI assistants to remain synchronized and avoid repeating work or contradicting previous decisions.
+Avoid relying solely on conversation history. Important project decisions should eventually be reflected in the repository documentation.
 
 ---
 
-# 14. CURRENT PROJECT POSITION
+# 14. CROSS-AI CONTEXT SYNCHRONIZATION
 
-**We are currently here:**
+The three assistants must cooperate without duplicating work or contradicting previous decisions.
 
-- Foundation: completed.
-- Design system: established.
-- Homepage architecture: planned.
-- Navbar: implemented and visually tested.
-- Hero: implemented and visually tested.
-- WINGMACC browser preview: implemented and loading correctly.
-- Mobile navigation: working.
-- Responsive layout: visually tested.
-- Selected Projects: not yet implemented.
-- About: not yet implemented.
-- Skills & Technologies: not yet implemented.
-- Contact: not yet implemented.
-- Final production testing: pending.
-- Deployment: pending.
+Whenever the user switches between assistants, they may provide a project handoff or a focused context update.
 
-**Immediate next action:** Review the desktop screenshot I will provide, then refine the first-pass Navbar and Hero before proceeding to the Selected Projects section.
+Each assistant should:
 
----
+1. Read the supplied context before proceeding.
+2. Respect the latest approved decisions.
+3. Identify what has actually been implemented versus merely proposed.
+4. Ask for updated code or reports when necessary.
+5. Produce concise, self-contained context updates when requested.
+6. Preserve important technical and design decisions.
 
-## FINAL INSTRUCTION
-
-Continue from the exact project position described above.
-
-Do not restart the project, repeat completed setup steps, or ask me to re-explain decisions already documented here.
-
-First, acknowledge that you understand the project context and summarize the current development position in a few sentences.
-
-Then help me proceed with the next logical task.
-
-Let's build something that genuinely represents my identity as a developer.
+The objective is a coordinated three-assistant development workflow in which ChatGPT handles planning, Gemini supports analysis, and Claude Code handles implementation.

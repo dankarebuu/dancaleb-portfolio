@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1919 960" width="1919" height="960" role="img" aria-label="Dan Caleb portfolio website hero preview">
+  <rect width="1919" height="960" fill="#0B0E11"/>
+  <!-- Subtle grid -->
+  <g stroke="#778391" stroke-width="1" opacity="0.06">
+    <path d="M0 64h1919M0 128h1919M0 192h1919M0 256h1919M0 320h1919M0 384h1919M0 448h1919M0 512h1919M0 576h1919M0 640h1919M0 704h1919M0 768h1919M0 832h1919M0 896h1919"/>
+    <path d="M64 0v960M128 0v960M192 0v960M256 0v960M320 0v960M384 0v960M448 0v960M512 0v960M576 0v960M640 0v960M704 0v960M768 0v960M832 0v960M896 0v960M960 0v960M1024 0v960M1088 0v960M1152 0v960M1216 0v960M1280 0v960M1344 0v960M1408 0v960M1472 0v960M1536 0v960M1600 0v960M1664 0v960M1728 0v960M1792 0v960M1856 0v960"/>
+  </g>
+  <!-- Navbar -->
+  <g font-family="Poppins, Inter, sans-serif">
+    <text x="120" y="72" font-size="30" font-weight="700" fill="#F1F3F5">DAN CALEB<tspan fill="#40C9BD">.</tspan></text>
+    <text x="1450" y="72" font-size="20" fill="#A1AAB5">Home</text>
+    <text x="1560" y="72" font-size="20" fill="#A1AAB5">Projects</text>
+    <text x="1680" y="72" font-size="20" fill="#A1AAB5">About</text>
+    <text x="1790" y="72" font-size="20" fill="#40C9BD">Contact</text>
+  </g>
+  <!-- Eyebrow -->
+  <text x="120" y="220" font-family="JetBrains Mono, monospace" font-size="18" letter-spacing="4" fill="#40C9BD">SOFTWARE DEVELOPER / PORTFOLIO</text>
+  <!-- Headline -->
+  <g font-family="Poppins, Inter, sans-serif">
+    <text x="120" y="320" font-size="72" font-weight="700" fill="#F1F3F5">Building things that</text>
+    <text x="120" y="410" font-size="72" font-weight="700" fill="#F1F3F5">make an <tspan fill="#40C9BD">impact.</tspan></text>
+  </g>
+  <!-- Subtext -->
+  <text x="120" y="490" font-family="Inter, sans-serif" font-size="22" fill="#A1AAB5">An aspiring developer focused on building useful digital</text>
+  <text x="120" y="525" font-family="Inter, sans-serif" font-size="22" fill="#A1AAB5">experiences through code, creativity, and continuous learning.</text>
+  <!-- Buttons -->
+  <rect x="120" y="580" width="230" height="56" rx="28" fill="#40C9BD"/>
+  <text x="235" y="615" font-family="Inter, sans-serif" font-size="18" font-weight="600" fill="#0B0E11" text-anchor="middle">Explore My Work ↗</text>
+  <rect x="370" y="580" width="180" height="56" rx="28" fill="none" stroke="#27313A" stroke-width="2"/>
+  <text x="460" y="615" font-family="Inter, sans-serif" font-size="18" fill="#F1F3F5" text-anchor="middle">About Me</text>
+  <!-- Browser frame (right column) -->
+  <g transform="translate(960, 180)">
+    <rect x="0" y="0" width="820" height="620" rx="16" fill="#11171D" stroke="#27313A" stroke-width="2"/>
+    <rect x="0" y="0" width="820" height="60" rx="16" fill="#171F27"/>
+    <rect x="0" y="30" width="820" height="30" fill="#171F27"/>
+    <circle cx="36" cy="30" r="7" fill="#F87171"/>
+    <circle cx="60" cy="30" r="7" fill="#FBBF24"/>
+    <circle cx="84" cy="30" r="7" fill="#4ADE80"/>
+    <rect x="200" y="14" width="420" height="32" rx="8" fill="#0B0E11"/>
+    <text x="410" y="35" font-family="JetBrains Mono, monospace" font-size="14" fill="#778391" text-anchor="middle">wingmacc-inventory.netlify.app</text>
+    <!-- Stylized dashboard mockup -->
+    <rect x="20" y="80" width="780" height="360" rx="10" fill="#0B0E11" stroke="#27313A" stroke-width="1.5"/>
+    <rect x="40" y="100" width="200" height="28" rx="6" fill="#171F27"/>
+    <rect x="40" y="150" width="720" height="60" rx="8" fill="#171F27"/>
+    <rect x="40" y="150" width="60" height="60" rx="8" fill="#40C9BD"/>
+    <rect x="120" y="170" width="160" height="10" rx="4" fill="#A1AAB5"/>
+    <rect x="300" y="170" width="120" height="10" rx="4" fill="#778391"/>
+    <rect x="40" y="230" width="220" height="90" rx="8" fill="#171F27" stroke="#27313A" stroke-width="1"/>
+    <rect x="60" y="250" width="60" height="12" rx="4" fill="#40C9BD"/>
+    <rect x="60" y="275" width="100" height="8" rx="4" fill="#778391"/>
+    <rect x="280" y="230" width="220" height="90" rx="8" fill="#171F27" stroke="#27313A" stroke-width="1"/>
+    <rect x="300" y="250" width="60" height="12" rx="4" fill="#FBBF24"/>
+    <rect x="300" y="275" width="100" height="8" rx="4" fill="#778391"/>
+    <rect x="520" y="230" width="220" height="90" rx="8" fill="#171F27" stroke="#27313A" stroke-width="1"/>
+    <rect x="540" y="250" width="60" height="12" rx="4" fill="#4ADE80"/>
+    <rect x="540" y="275" width="100" height="8" rx="4" fill="#778391"/>
+    <text x="20" y="500" font-family="JetBrains Mono, monospace" font-size="14" letter-spacing="3" fill="#40C9BD">FEATURED PROJECT / 001</text>
+    <text x="20" y="535" font-family="Inter, sans-serif" font-size="22" font-weight="600" fill="#F1F3F5">WINGMACC Inventory System</text>
+  </g>
+</svg>

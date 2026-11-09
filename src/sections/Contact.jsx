@@ -2,7 +2,6 @@ import { useState } from 'react'
 import Reveal from '../components/Reveal'
 
 export default function Contact() {
-  // Replace this with your preferred primary email address
   const CONTACT_EMAIL = 'dancaleb724@gmail.com'
   const [copied, setCopied] = useState(false)
 
@@ -23,7 +22,7 @@ export default function Contact() {
           <div className="flex items-center gap-3">
             <span className="w-8 h-px bg-[#40C9BD]" />
             <span className="font-mono text-xs uppercase tracking-widest text-[#40C9BD]">
-              04 / Contact
+              05 / Contact
             </span>
           </div>
           <h2 className="text-3xl md:text-5xl font-bold text-[#F1F3F5] tracking-tight max-w-3xl">

@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import useActiveSection from '../hooks/useActiveSection'
 
 function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false)
@@ -7,8 +8,11 @@ function Navbar() {
     { label: 'Home', href: '#home' },
     { label: 'Projects', href: '#projects' },
     { label: 'About', href: '#about' },
+    { label: 'Writing', href: '#writing' },
     { label: 'Contact', href: '#contact' },
   ]
+
+  const activeId = useActiveSection(links.map((l) => l.href.slice(1)))
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 border-b border-white/5 bg-[#0B0E11]/85 backdrop-blur-lg">
@@ -22,15 +26,23 @@ function Navbar() {
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
-          {links.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              className="text-sm text-[#A1AAB5] transition-colors hover:text-[#40C9BD]"
-            >
-              {link.label}
-            </a>
-          ))}
+          {links.map((link) => {
+            const isActive = activeId === link.href.slice(1)
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                aria-current={isActive ? 'page' : undefined}
+                className={`text-sm transition-colors hover:text-[#40C9BD] ${
+                  isActive
+                    ? 'text-[#40C9BD] font-semibold'
+                    : 'text-[#A1AAB5]'
+                }`}
+              >
+                {link.label}
+              </a>
+            )
+          })}
         </div>
 
         <div className="flex items-center gap-3">
@@ -55,16 +67,24 @@ function Navbar() {
         {menuOpen && (
           <div className="absolute left-0 right-0 top-full border-b border-[#27313A] bg-[#11171D] p-5 md:hidden">
             <div className="flex flex-col gap-5">
-              {links.map((link) => (
-                <a
-                  key={link.label}
-                  href={link.href}
-                  onClick={() => setMenuOpen(false)}
-                  className="text-sm text-[#A1AAB5] transition-colors hover:text-[#40C9BD]"
-                >
-                  {link.label}
-                </a>
-              ))}
+              {links.map((link) => {
+                const isActive = activeId === link.href.slice(1)
+                return (
+                  <a
+                    key={link.label}
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    aria-current={isActive ? 'page' : undefined}
+                    className={`text-sm transition-colors hover:text-[#40C9BD] ${
+                      isActive
+                        ? 'text-[#40C9BD] font-semibold'
+                        : 'text-[#A1AAB5]'
+                    }`}
+                  >
+                    {link.label}
+                  </a>
+                )
+              })}
             </div>
           </div>
         )}

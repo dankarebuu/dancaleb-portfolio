@@ -14,7 +14,7 @@ function HeroProjectPreview() {
 
           <div className="mx-auto flex max-w-xs flex-1 items-center justify-center rounded-md bg-[#0B0E11] px-3 py-1.5">
             <span className="truncate text-xs text-[#778391]">
-              wingmacc-inventory.app
+              wingmacc-inventory.netlify.app
             </span>
           </div>
         </div>
@@ -24,6 +24,9 @@ function HeroProjectPreview() {
           <img
             src={dashboardImage}
             alt="WINGMACC Church Inventory System dashboard"
+            width="1919"
+            height="960"
+            fetchpriority="high"
             className="block h-auto w-full object-cover object-top"
           />
         </div>

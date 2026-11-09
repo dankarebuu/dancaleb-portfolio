@@ -41,14 +41,14 @@
 
 **Goal:** Establish the complete visual and structural direction before implementation.
 
-- [ ] Finalize design system.
-- [ ] Define color palette.
-- [ ] Select typography.
-- [ ] Establish spacing and layout rules.
-- [ ] Define component styling conventions.
-- [ ] Plan website sections.
-- [ ] Establish responsive design requirements.
-- [ ] Plan animations and interactions.
+- [x] Finalize design system.
+- [x] Define color palette.
+- [x] Select typography (Inter / Poppins / JetBrains Mono via Google Fonts).
+- [x] Establish spacing and layout rules.
+- [x] Define component styling conventions.
+- [x] Plan website sections.
+- [x] Establish responsive design requirements.
+- [x] Plan animations and interactions.
 
 **Completion Criteria:** The website has a clear visual direction and an agreed-upon structure.
 
@@ -58,18 +58,18 @@
 
 **Goal:** Build the actual portfolio website.
 
-- [ ] Configure the application structure.
-- [ ] Establish reusable components.
-- [ ] Implement global styling.
-- [ ] Build navigation.
-- [ ] Develop the hero section.
-- [ ] Develop the about section.
-- [ ] Develop the skills and technologies section.
-- [ ] Develop the featured projects section.
-- [ ] Develop individual project presentations.
-- [ ] Develop the contact section.
-- [ ] Implement footer.
-- [ ] Add animations and interactions.
+- [x] Configure the application structure.
+- [x] Establish reusable components.
+- [x] Implement global styling.
+- [x] Build navigation.
+- [x] Develop the hero section.
+- [x] Develop the about section.
+- [x] Develop the skills and technologies section.
+- [x] Develop the featured projects section.
+- [x] Develop individual project presentations.
+- [x] Develop the contact section.
+- [x] Implement footer.
+- [x] Add animations and interactions.
 
 **Completion Criteria:** All planned website sections are implemented and functional.
 
@@ -79,15 +79,15 @@
 
 **Goal:** Populate the portfolio with authentic information and projects.
 
-- [ ] Write personal introduction.
-- [ ] Prepare developer profile information.
-- [ ] Organize technical skills.
-- [ ] Prepare WINGMACC project presentation.
-- [ ] Collect project screenshots.
-- [ ] Write project descriptions.
-- [ ] Add GitHub repository links.
-- [ ] Add live project links when available.
-- [ ] Review all website content for accuracy.
+- [x] Write personal introduction.
+- [x] Prepare developer profile information.
+- [x] Organize technical skills.
+- [x] Prepare WINGMACC project presentation.
+- [x] Collect project screenshots.
+- [x] Write project descriptions.
+- [x] Add GitHub repository links.
+- [x] Add live project links when available.
+- [x] Review all website content for accuracy.
 
 **Completion Criteria:** The portfolio contains complete, accurate, and presentable information.
 
@@ -97,17 +97,17 @@
 
 **Goal:** Ensure the website works properly across different devices and browsers.
 
-- [ ] Test desktop layout.
-- [ ] Test tablet layout.
-- [ ] Test mobile layout.
-- [ ] Check navigation functionality.
-- [ ] Check all interactive elements.
-- [ ] Verify external links.
-- [ ] Optimize images and assets.
-- [ ] Check loading performance.
-- [ ] Resolve layout issues.
-- [ ] Review accessibility basics.
-- [ ] Perform final content review.
+- [x] Test desktop layout.
+- [x] Test tablet layout.
+- [x] Test mobile layout.
+- [x] Check navigation functionality.
+- [x] Check all interactive elements.
+- [x] Verify external links.
+- [x] Optimize images and assets.
+- [x] Check loading performance.
+- [x] Resolve layout issues.
+- [x] Review accessibility basics.
+- [x] Perform final content review.
 
 **Completion Criteria:** The website is responsive, functional, and ready for deployment.
 
@@ -116,11 +116,10 @@
 #### Phase 5 — Deployment and Launch
 * [x] Prepare production build.
 * [x] Verify production build locally.
-* [x] Connect GitHub repository to Netlify.
-* [x] Configure deployment settings.
-* [x] Deploy website.
-* [x] Verify live website.
-* [x] Test live links and navigation.
+* [x] Configure deployment settings (netlify.toml, _redirects, robots.txt, sitemap.xml).
+* [ ] Deploy website — run `npm run deploy` once a domain is confirmed.
+* [ ] Verify live website.
+* [ ] Test live links and navigation.
 
 **Completion Criteria:** The portfolio is publicly accessible and functioning correctly.
 
@@ -130,12 +129,15 @@
 
 **Goal:** Continuously improve the portfolio and expand its capabilities.
 
-- [ ] Improve SEO metadata.
-- [ ] Add additional projects.
-- [ ] Refine animations.
-- [ ] Improve performance.
+- [x] Improve SEO metadata — Open Graph, Twitter card, canonical, theme-color, robots meta.
+- [x] Add project case studies — ProjectCaseStudy.jsx is implemented and wired into Projects.
+- [x] Refine animations — scroll-reveal via Reveal component, respects prefers-reduced-motion.
+- [x] Improve performance — removed orphaned assets; dashboard PNG is the remaining optimization target.
+- [x] Add sitemap.xml and robots.txt.
+- [x] Add keyboard focus visibility and skip-to-content link.
+- [x] Add additional projects — added Portfolio Codebase meta showcase alongside WINGMACC.
+- [x] Add engineering notes / technical writing section — implemented interactive notes reader.
 - [ ] Consider custom domain.
-- [ ] Add project case studies.
 - [ ] Update skills as experience grows.
 - [ ] Improve content based on feedback.
 

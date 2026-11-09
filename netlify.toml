@@ -1,0 +1,19 @@
+# Netlify configuration — Dan Caleb Portfolio
+# Deploy with: netlify deploy --dir=dist --prod
+# Or push to GitHub for automatic deploys via the Netlify GitHub app.
+
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# SPA fallback: serve index.html for all non-asset paths.
+# This is also mirrored in public/_redirects for the web UI.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Don't run the dev server during build checks.
+[dev]
+  command = "npm run dev"
+  port = 5173
